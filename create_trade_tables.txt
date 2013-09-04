@@ -1,0 +1,251 @@
+USE `wewebbui_trade` ;
+
+
+DROP TABLE item_has_matches,client_has_match, match, items, subcategory,category,client
+-- -----------------------------------------------------
+
+-- Table `wewebbui_trade`.`client`
+
+-- -----------------------------------------------------
+
+CREATE  TABLE IF NOT EXISTS `wewebbui_trade`.`client` (
+
+  `client_id` INT NOT NULL ,
+
+  `first_name` VARCHAR(45) NOT NULL ,
+
+  `last_name` VARCHAR(45) NOT NULL ,
+
+  `username` VARCHAR(45) NOT NULL ,
+
+  `password` VARCHAR(45) NOT NULL ,
+
+  `phone` VARCHAR(45) NOT NULL ,
+
+  `email` VARCHAR(45) NOT NULL ,
+
+  `address` VARCHAR(45) NULL ,
+
+  `city` VARCHAR(45) NULL ,
+
+  `state` VARCHAR(45) NULL ,
+
+  `date_joined` VARCHAR(45) NULL ,
+
+  PRIMARY KEY (`client_id`) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `wewebbui_trade`.`category`
+
+-- -----------------------------------------------------
+
+CREATE  TABLE IF NOT EXISTS `wewebbui_trade`.`category` (
+
+  `category_id` INT NOT NULL ,
+
+  `category` VARCHAR(45) NOT NULL ,
+
+  PRIMARY KEY (`category_id`) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `wewebbui_trade`.`subcategory`
+
+-- -----------------------------------------------------
+
+CREATE  TABLE IF NOT EXISTS `wewebbui_trade`.`subcategory` (
+
+  `subcat_code` VARCHAR(8) NOT NULL ,
+
+  `subcategory` VARCHAR(45) NOT NULL ,
+
+  `category_id` INT NOT NULL ,
+
+  PRIMARY KEY (`subcat_code`, `category_id`) ,
+
+  INDEX `fk_subcategory_category1_idx` (`category_id` ASC) ,
+
+  CONSTRAINT `fk_subcategory_category1`
+
+    FOREIGN KEY (`category_id` )
+
+    REFERENCES `wewebbui_trade`.`category` (`category_id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `wewebbui_trade`.`items`
+
+-- -----------------------------------------------------
+
+CREATE  TABLE IF NOT EXISTS `wewebbui_trade`.`items` (
+
+  `item_id` INT NOT NULL ,
+
+  `description` VARCHAR(140) NULL ,
+
+  `real_item` TINYINT(1) NULL ,
+
+  `client_id` INT NOT NULL ,
+
+  `subcat_code` VARCHAR(8) NOT NULL ,
+
+  PRIMARY KEY (`item_id`, `client_id`, `subcat_code`) ,
+
+  INDEX `fk_items_client1_idx` (`client_id` ASC) ,
+
+  INDEX `fk_items_subcategory1_idx` (`subcat_code` ASC) ,
+
+  CONSTRAINT `client_id`
+
+    FOREIGN KEY (`client_id` )
+
+    REFERENCES `wewebbui_trade`.`client` (`client_id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `subcat_code`
+
+    FOREIGN KEY (`subcat_code` )
+
+    REFERENCES `wewebbui_trade`.`subcategory` (`subcat_code` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `wewebbui_trade`.`matches`
+
+-- -----------------------------------------------------
+
+CREATE  TABLE IF NOT EXISTS `wewebbui_trade`.`matches` (
+
+  `match_id` INT NOT NULL ,
+
+  `successful` TINYINT(1) NULL ,
+
+  `date` DATE NULL ,
+
+  PRIMARY KEY (`match_id`) )
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `wewebbui_trade`.`client_has_match`
+
+-- -----------------------------------------------------
+
+CREATE  TABLE IF NOT EXISTS `wewebbui_trade`.`client_has_match` (
+
+  `client_id` INT NOT NULL ,
+
+  `match_id` INT NOT NULL ,
+
+  INDEX `fk_client_has_offer_offer1_idx` (`match_id` ASC) ,
+
+  INDEX `fk_client_has_offer_client1_idx` (`client_id` ASC) ,
+
+  PRIMARY KEY (`client_id`, `match_id`) ,
+
+  CONSTRAINT `fk_client_has_offer_client1`
+
+    FOREIGN KEY (`client_id` )
+
+    REFERENCES `wewebbui_trade`.`client` (`client_id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_client_has_offer_offer1`
+
+    FOREIGN KEY (`match_id` )
+
+    REFERENCES `wewebbui_trade`.`match` (`match_id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
+
+
+
+
+
+-- -----------------------------------------------------
+
+-- Table `wewebbui_trade`.`item_has_match`
+
+-- -----------------------------------------------------
+
+CREATE  TABLE IF NOT EXISTS `wewebbui_trade`.`item_has_match` (
+
+  `item_id` INT NOT NULL ,
+
+  `match_id` INT NOT NULL ,
+
+  PRIMARY KEY (`item_id`, `match_id`) ,
+
+  INDEX `fk_items_has_transaction_transaction1_idx` (`match_id` ASC) ,
+
+  INDEX `fk_items_has_transaction_items1_idx` (`item_id` ASC) ,
+
+  CONSTRAINT `fk_items_has_transaction_items1`
+
+    FOREIGN KEY (`item_id` )
+
+    REFERENCES `wewebbui_trade`.`items` (`item_id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION,
+
+  CONSTRAINT `fk_items_has_transaction_transaction1`
+
+    FOREIGN KEY (`match_id` )
+
+    REFERENCES `wewebbui_trade`.`match` (`match_id` )
+
+    ON DELETE NO ACTION
+
+    ON UPDATE NO ACTION)
+
+ENGINE = InnoDB;
