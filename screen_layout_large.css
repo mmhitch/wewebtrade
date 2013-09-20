@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+/* Layout (global rules for all sizes) */
+
+body {
+    /*make sure that the page contaier can touch the top, left, and right sides of our window */
+    margin: 0;
+    padding: 0;
+}
+
+header a.logo {
+    /* anchor links by default have a display type of inline which means that the lenth or height of the actual link is only as large as the content inside.  Since our anchor link for our logo is empty, we need to give it dimensions. */
+    display: block;
+    position: absolute; /*so we can position the logo inside the page container, which has a osition of relative */
+    background-position: 0 0; /* 0px X, 0px Y */
+    background-repeat: no-repeat;
+}
+
+/* Layout Large Screens (default for older browsers) */
+
+header {
+    height: 275px; /* matches height of large banner */
+    background: url(../images/portfolio_mark2.png) no-repeat right 0; /* (x= right; , y=0px) */
+}
+
+header a.logo {
+    width: 150px; /* matches width of large logo */
+    height: 150px;
+    top: 28px; /* moves logo down 28px from top edge */
+    right: 30px; /* moves logo over 30px from right edge */
+    /*background-image: url(../images/wewebbuild_bottlecap_sm.png);*/
+}
+
+nav {
+    width: 100%; /* nav spans container width */
+    display: block;
+    position: absolute;
+    background: #004080;
+}
+
+article {
+    padding: 60px 20px 10px 20px; /* 60px gives us space for the nav */
+}
+
+.promo_container {
+    padding: 0 0 15px 20px;
+}
+
+.promo_container .promo {
+    /* targets individual promos inside promo container */
+    width: 33%; /* each promo takes up a 3rd of the available space */
+    float: left; /* lets 3 promo areas form 3 columns */
+    background-position: 0 3px; /* adjust image down 3px in Y to align with text */
+}
+
+.promo_container .promo .content {
+    /* taget content divs with each promo div within the promo container */
+    padding: 0 30px 0 70px; /* makes sure that the text within the content container doesn't get within 70px of the left hand side of the container (gives space for the image) */
+}
+
+nav {
+    top: 275px;
+}
+
+nav a {
+    /* spaces out anchor tags from each other and makes bar taller */
+    margin: 12px 0 10px 20px; 
+}
+
+@media screen and (max-width: 990px) {
+    footer {
+        padding-left: 20px;
+    }
+}
+figure{
+    display: inline-block;
+}
+figure img {
+    border-radius: 2px;
+    border: 1px solid #004080;
+    width: 100%;
+    height: auto;
+}
+
+/*fix form responsiveness*/
+.contact_form li{
+    border-bottom:1px solid #eee;
+}
+
+.contact_form label {
+    width:150px;
+    margin-top: 3px;
+    display:inline-block;
+    float:left;
+    padding:3px;
+}
