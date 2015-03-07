@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/* Layout Medium Screens */
+
+header {
+    height: 200px; /* matches height of mes=dium banner image */
+    background: url(../images/logo_background_md.png) no-repeat 90% 0;
+}
+
+header a .logo {
+    width: 115px; /* matches width of medium logo */
+    height: 70px; /* matces height of medium logo */
+    top: 20px; /* positions logo 20px from the top */
+    right: 20px; /* positions logo 20px from the bottom */
+    background-image: url(http://www.wewebbuild.com/portfolio/images.wewebbuild_bottlecap_sm.png);
+}
+
+nav {
+    top: 200px; /* matches height of eader image */
+}
+
+nav a {
+    margin-right: 20px; /*space out nav items a bit for people on tablet devices */
+}
+
+.promo_container {
+    padding: 0 20px 15px 20px;
+}
+
+.promo_container .promo {
+    /*0X and 0Y */
+    background-position: 0 0;
+}
+
+.promo_contaner .promo .content {
+    /* moe text down 70px to make room for image.
+     * left is set back to 0 to align on left side */
+    padding: 70px 30px 0 0;
+}
+
+body {
+    background-image: none;
+    /* since we can't see the background image on a medium scree, we don't want users to download graphic */
+}
+/*fix form responsiveness*/
+.contact_form li{
+    padding:12px; 
+    border-bottom: none;
+    position:absolute;
+} 
+

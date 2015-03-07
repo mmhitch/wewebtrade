@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+/* Layout Small Screens */
+
+header{
+    /* setting for small header image */
+
+    height: 75px;
+    background: url(../images/logo_background_sm.png) no-repeat right 0;
+}
+
+header a.logo {
+    /*setting for small logo image */
+    width: 200px;
+    height: 50px;
+    top: 16px;
+    margin: auto;
+    background-image: url(../images/wewebbuild_logo_sm.png);
+}
+
+article {
+    padding: 20px 20px 10px 20px;
+}
+
+nav {
+    position: static; /* reset position to normal document flow (which is below footer) */
+    padding: 10px 0 10px 0;
+    background: #004080;
+}
+
+nav a {
+    color: #a6abc5;
+    display: block;
+    margin: 15px;
+    padding: 9px;
+    border: 1px solid #a6abc5;
+    background: url(../images/mobile_link_arrow.png) no-repeat right center;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+}
+
+nav a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, .15);
+    /* R, G, B, Alpha(transperancy) 15% alpha = 85% transparent */
+}
+
+.promo_container {
+    padding: 0;
+}
+
+.promo_container .promo {
+    width: auto; /* overrides the 33% */
+    float: none;  /* they take up their own space */
+    padding: 10px 0 0 0;
+    background-position: 20px 13px; /* 20px X and 30px Y */
+    border-top: 1px solid #ccc;
+}
+
+.promo_container .promo .content {
+    padding: 0 20px 5px 90px;
+    /* 20px padding + 70px image size = 90px */
+}
+
+.promo_container h2 {
+    margin-left: 20px;
+}
+
+footer {
+    border-top: 1px solid #a6abc5;
+    /* adds a tiy border between footer and navigation */
+}
+
+body {
+    background-image: none;
+    /* removes backround image for small devices */
+}
+
+/*fix form responsiveness*/
+.contact_form li{
+    padding:12px; 
+    border: none;
+    position:absolute;
+}
+
+.contact_form label {
+    width:75px;
+}
+
+

@@ -1,0 +1,67 @@
+/**** Dropdown Nav with no borders ****/
+
+#main_menu li {
+    list-style-type: none;
+    position: relative;
+    float: left;
+    background: #2f3551;
+
+}
+
+/* Add a seperator between the  items */
+#main_menu > li {
+    margin-left: 0px;
+}
+
+#main_menu li a {
+    display: block;
+    width: 120px;
+    padding:  6px 10px;
+    text-decoration: none;
+    color: #ff8000;
+
+}
+
+/*Make borders around the main nav items
+bot not on the bottom as they're
+seperated by the headers border*/
+
+#main_menu > li > a {
+    border:  1px solid gray;
+    border-bottom: none;
+}
+
+#main_menu > li:hover > a {
+    color: #000000;
+    background-color: #d0350f;
+}
+
+#main_menu ul.sub_menu {
+    position: absolute;
+    display: none;
+    border: 1px solid gray;
+}
+
+#main_menu li:hover ul.sub_menu {
+    display: block;
+}
+
+#main_menu ul.sub_menu a {
+    background: #FAFAFA;
+    color: gray;
+    font-size: 14px;
+}
+
+#main_menu ul.sub_menu a:hover {
+    background: #808080;
+    color: white;
+}
+
+#main_menu > li > a.selected {
+    background: #ff8000;
+    color: #000000;
+}
+footer a.selected {
+    background: #ff8000;
+    color: #000000;
+}

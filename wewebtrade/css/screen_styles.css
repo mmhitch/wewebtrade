@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+/* Global Content Formatting and Styles */
+
+body {
+    color: #004080;
+    line-height: 1.5em;
+    font-family: arial;
+    font-size: 14px;
+    background: #003264 url(../images/background_gradient.jpg) repeat-x 0 0;
+    /*repeat-x = only repeat on horizontal, 0px X, 0px Y*/
+}
+
+.page {
+    max-width: 980px; /*980px; prevents stretching of screen past 980 wide*/
+    margin: 0 auto; /*0 Top & Bottom, Auto Right and Left (Centers page)*/
+    position: relative; /*Anything positioned within page are can be positioned absolutely relative to the page.*/
+    background: #fff;   
+}
+
+h1 {
+    font-size: 2em;     /*we want font size to be proportional based onthe base font size (defined as 14px in body above). So an h1 is approximately 28px*/
+    line-height: 1em;
+    font-weight: normal; /*we don't want bold h1's*/
+    color: #002953;
+    margin: 0 0 .5em 0; /*T R B L*/
+}
+
+h2 {
+    font-size: 1.7em; /*70% larger than base font*/
+    margin: 0 0 1em 0;
+}
+
+h3 {
+    font-size: 1.5em; /*50% larger than base font*/
+    margin: 0 0 1em 0;
+}
+ 
+p {
+    margin: 0 0 .75em 0; /*T R B L*/
+}
+
+a {
+    color: #de9000;
+}
+
+a:hover { /*a tags with a psuedo class of hover*/
+    color: #009eff;
+}
+
+footer {
+    font-size: .85em; /*155 smaller than base font*/
+    color: #9ba0bd;
+    background: #004080; /*same as body*/
+    padding: 10px 10px 10px 10px;  /*T R B L*/
+}
+
+a.cta {
+    text-transform: uppercase; /*ALL CAPS*/
+    font-size: .9em; /*10% smaller than base font*/
+    font-weight: bold;
+    text-decoration: none; /*removes underline*/
+    margin: 0.5em 0 0 0; /*T R B L */
+    padding: 0 12px 0 0; /*R padding to give space between link and arrow below*/
+    background: url(../images/cta_arrow.png) no-repeat right 0; /*x=right, y=0. x=right aligns image to right of link*/
+}
+
+a.cta:hover {
+    background-position: right -50px; /*-50px in Y*/
+}
+
+.promo h3 {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.promo p {
+    line-height: 1.2em;
+    font-size: .9em;
+    margin-bottom: .5em;
+}
+
+.promo {
+    /*prevent background images from repeating for all promos */
+    background-repeat: no-repeat;
+}
+.promo.one {
+    /* define image for promo one */
+    background-image: url(../images/html5_logo.png);
+}
+
+.promo.two {
+    /* define image for promo two */
+    background-image: url(../images/wordpress_logo.png);
+}
+
+.promo.three {
+    /* define image for promo three */
+    background-image: url(../images/php_logo.png);
+}
+
+.promo.four {
+    /* define image for promo one */
+    background-image: url(../images/mysql_logo.png);
+}
+
+.promo.five {
+    /* define image for promo two */
+    background-image: url(../images/seo.png);
+}
+
+.promo.six {
+    /* define image for promo three */
+    background-image: url(../images/js_logo.png);
+}
+
+.promo.seven {
+    /* define image for promo one */
+    background-image: url(../images/cs6_logo.png);
+}
+
+.promo.eight {
+    /* define image for promo two */
+    background-image: url(../images/css3_logo.png);
+}
+
+.promo.nine {
+    /* define image for promo three */
+    background-image: url(../images/android_logo.png);
+}
+
+nav a {
+    /* target anchor links inside a nav element */
+    color: #c3c3c3;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block; /* will have height and width based on what they need */
+    font-weight: bold;
+    font-size: .9em;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.clear-fix {
+    clear: both;
+    line-height: 1px;
+}
+
+mark {
+    background-color: #ffffd7;
+}
+
+figcaption {
+    text-align: center;
+}
+
+#examples {
+    padding: 3em;
+}
+
+#examples ul li {
+    list-style-type: none;
+}
+.selected {
+    background-color: #fff;
+}

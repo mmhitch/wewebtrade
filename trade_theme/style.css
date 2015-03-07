@@ -1,0 +1,50 @@
+/*
+Theme Name: Scratch Theme
+Description: For understanding how the basic WordPress components layout
+Author: Mark Hitchcock
+*/
+
+body {
+        text-align: center;
+}
+
+#page {
+        display: block;
+        /*border: 1px #000000 solid;*/
+        width: 90%;
+        margin: 0px auto;
+}
+
+#header {
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 2px #00ff00 solid;
+}
+
+#content {
+        width: 75%;
+        border: 2px #ff0000 solid;
+        float: left;
+}
+
+#sidebar {
+        width: 23%;
+        border: 2px #ffff00 solid;
+        float: right;
+}
+
+#clear_both {
+        clear: both;  /*clear floats*/
+}
+
+#footer {
+    padding: 10px;
+    margin-top: 20px;
+    border: 2px #0000ff solid;
+}
+
+.title {
+        font-size: 11pt;
+        font-family: verdana;
+        font-weight:  bold;
+}

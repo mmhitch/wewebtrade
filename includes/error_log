@@ -1,0 +1,10 @@
+[04-Oct-2014 17:12:52 America/Denver] PHP Warning:  include(): Failed opening 'includes/arrays.php' for inclusion (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 16
+[04-Oct-2014 17:12:52 America/Denver] PHP Notice:  Undefined variable: my_items in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 21
+[04-Oct-2014 17:12:52 America/Denver] PHP Warning:  include_once(includes/db_functions.php): failed to open stream: No such file or directory in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 82
+[04-Oct-2014 17:12:52 America/Denver] PHP Warning:  include_once(): Failed opening 'includes/db_functions.php' for inclusion (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 82
+[04-Oct-2014 17:12:52 America/Denver] PHP Notice:  Undefined index: username in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 87
+[04-Oct-2014 17:12:52 America/Denver] PHP Notice:  Undefined variable: user_name in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 91
+[04-Oct-2014 17:12:52 America/Denver] PHP Notice:  Undefined index: password in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 96
+[04-Oct-2014 17:12:52 America/Denver] PHP Notice:  Undefined variable: user_name in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 102
+[04-Oct-2014 17:12:52 America/Denver] PHP Notice:  Undefined variable: dbh in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 105
+[04-Oct-2014 17:12:52 America/Denver] PHP Fatal error:  Call to a member function query() on a non-object in /home2/wewebbui/public_html/wewebtrade/includes/wish_list.php on line 105
